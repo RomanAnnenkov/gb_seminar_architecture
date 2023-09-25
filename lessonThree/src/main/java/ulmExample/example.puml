@@ -44,7 +44,11 @@ CalculatorPresenter o-- "1" CalculatorView : uses
 CalculatorPresenter o-- "1..1" CalculatorModel : uses
 
 ' Зависимость
-MainProgram ..> CalculatorView : initiates
+'MainProgram ..> ViewObserver : initiates
+' Зависимость: MainProgram зависит от CalculatorPresenter для инициализации
+MainProgram ..> CalculatorPresenter : creates
+MainProgram ..> CalculatorViewImpl : creates
+MainProgram ..> CalculatorPresenter : creates
 
 ' Ассоциация с мультипликатором
 CalculatorView "0..1" -- "1" ViewObserver : updates

@@ -1,4 +1,4 @@
-package onlineTicket;
+package onlineTicket.ticket;
 
 import java.util.Date;
 

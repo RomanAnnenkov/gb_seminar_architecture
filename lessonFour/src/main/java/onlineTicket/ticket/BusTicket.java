@@ -1,4 +1,4 @@
-package onlineTicket;
+package onlineTicket.ticket;
 
 class BusTicket extends Ticket {
     int number;

@@ -1,9 +1,9 @@
-package onlineTicket;
+package onlineTicket.user;
 
 import java.util.Date;
 
 // Класс, представляющий пользователя системы.
-class User implements UserActions {
+public class User implements UserActions {
     @Override
     public boolean authorize(String username, String password) {
         // Реализация метода

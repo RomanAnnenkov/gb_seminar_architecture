@@ -93,5 +93,8 @@ Main --> ConsoleView : creates
 OnlineShop --> User : creates|authorize
 OnlineShop --> BusTicketProvider : uses
 BusTicketProvider --> BusTicket : creates
+'добавлю связи CоnsoleView в комментарии, так как при их добавлении на мой взгляд при их наличии читаемость диаграммы ухудшается
+'ConsoleView --> OnlineShop : uses
+'ConsoleView --> Scanner : uses
 
 @enduml

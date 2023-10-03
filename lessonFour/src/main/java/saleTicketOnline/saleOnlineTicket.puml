@@ -1,6 +1,7 @@
 @startuml
 class saleTicketOnline.ticket.BusTicket {
 - int routeId
+- int price
 + void setName(String)
 + void setSurname(String)
 + void setID(String)
@@ -85,4 +86,12 @@ saleTicketOnline.onlineShop.OnlineShopActions <|.. saleTicketOnline.onlineShop.O
 saleTicketOnline.ticket.TicketActions <|.. saleTicketOnline.ticket.Ticket
 saleTicketOnline.ticketProvider.TicketProviderActions <|.. saleTicketOnline.ticketProvider.BusTicketProvider
 saleTicketOnline.ticketProvider.TicketProviderActions <|-- saleTicketOnline.onlineShop.OnlineShopActions
+
+Main --> BusTicketProvider : creates
+Main --> OnlineShop : creates
+Main --> ConsoleView : creates
+OnlineShop --> User : creates|authorize
+OnlineShop --> BusTicketProvider : uses
+BusTicketProvider --> BusTicket : creates
+
 @enduml

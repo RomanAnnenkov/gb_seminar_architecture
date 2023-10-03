@@ -1,6 +1,6 @@
 package calculatorMVC.model.substractOperation;
 
-public class SubstractOperation {
+public class SubstractOperation implements ISubstract {
     public SubstractOperation(double firstArg, double secondArg) {
         this.firstArg = firstArg;
         this.secondArg = secondArg;
@@ -9,7 +9,7 @@ public class SubstractOperation {
     double firstArg;
     double secondArg;
 
-    public double subtract() {
+    public double substract() {
         return firstArg - secondArg;
     }
 }

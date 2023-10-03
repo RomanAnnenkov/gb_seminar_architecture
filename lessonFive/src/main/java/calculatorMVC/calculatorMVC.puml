@@ -1,0 +1,110 @@
+@startuml
+class calculatorMVC.db.DatabaseManagementSlice {
+- IFetchFromDB fetchFromDB
+- ISaveToDB saveToDB
++ void saveData(String)
++ String fetchData()
+}
+class calculatorMVC.model.multiplyOperation.MultiplyOperation {
+~ double firstArg
+~ double secondArg
++ double multiply()
+}
+class calculatorMVC.view.ConsoleView {
+~ IInput input
+~ IOutput output
+~ CalculationLayer calcLayer
++ void runCalculator()
+}
+interface calculatorMVC.model.multiplyOperation.IMultiply {
+~ double multiply()
+}
+interface calculatorMVC.view.IView {
+~ void runCalculator()
+}
+class calculatorMVC.Main {
++ {static} void main(String[])
+}
+class calculatorMVC.db.save.SaveToMysql {
++ void saveToDB(String)
+}
+class calculatorMVC.db.save.SaveToPostgresql {
++ void saveToDB(String)
+}
+interface calculatorMVC.view.output.IOutput {
+~ void displayOutput(String)
+}
+class calculatorMVC.db.fetch.FetchFromPostgresql {
++ String fetchFromDB()
+}
+interface calculatorMVC.model.divideOperation.IDivide {
+~ double divide()
+}
+class calculatorMVC.view.output.FileOutput {
++ void displayOutput(String)
+}
+class calculatorMVC.model.divideOperation.DivideOperation {
+~ double firstArg
+~ double secondArg
++ double divide()
+}
+class calculatorMVC.view.input.FileInput {
++ String getInput()
+}
+class calculatorMVC.model.sumOperation.SumOperation {
+~ double firstArg
+~ double secondArg
++ double sum()
+}
+class calculatorMVC.view.input.SystemInInput {
+- Scanner scanner
++ String getInput()
+}
+class calculatorMVC.model.CalculationLayer {
++ double add(double,double)
++ double subtract(double,double)
++ double multiply(double,double)
++ double divide(double,double)
+}
+interface calculatorMVC.model.sumOperation.ISum {
+~ double sum()
+}
+class calculatorMVC.view.output.ConsoleOutput {
++ void displayOutput(String)
+}
+class calculatorMVC.model.substractOperation.SubstractOperation {
+~ double firstArg
+~ double secondArg
++ double substract()
+}
+interface calculatorMVC.db.save.ISaveToDB {
+~ void saveToDB(String)
+}
+class calculatorMVC.db.fetch.FetchFromMysql {
++ String fetchFromDB()
+}
+interface calculatorMVC.db.fetch.IFetchFromDB {
+~ String fetchFromDB()
+}
+interface calculatorMVC.model.substractOperation.ISubstract {
+~ double substract()
+}
+interface calculatorMVC.view.input.IInput {
+~ String getInput()
+}
+
+
+calculatorMVC.model.multiplyOperation.IMultiply <|.. calculatorMVC.model.multiplyOperation.MultiplyOperation
+calculatorMVC.view.IView <|.. calculatorMVC.view.ConsoleView
+calculatorMVC.db.save.ISaveToDB <|.. calculatorMVC.db.save.SaveToMysql
+calculatorMVC.db.save.ISaveToDB <|.. calculatorMVC.db.save.SaveToPostgresql
+calculatorMVC.db.fetch.IFetchFromDB <|.. calculatorMVC.db.fetch.FetchFromPostgresql
+calculatorMVC.view.output.IOutput <|.. calculatorMVC.view.output.FileOutput
+calculatorMVC.model.divideOperation.IDivide <|.. calculatorMVC.model.divideOperation.DivideOperation
+calculatorMVC.view.input.IInput <|.. calculatorMVC.view.input.FileInput
+calculatorMVC.model.sumOperation.ISum <|.. calculatorMVC.model.sumOperation.SumOperation
+calculatorMVC.view.input.IInput <|.. calculatorMVC.view.input.SystemInInput
+calculatorMVC.view.output.IOutput <|.. calculatorMVC.view.output.ConsoleOutput
+calculatorMVC.model.substractOperation.ISubstract <|.. calculatorMVC.model.substractOperation.SubstractOperation
+calculatorMVC.db.fetch.IFetchFromDB <|.. calculatorMVC.db.fetch.FetchFromMysql
+@enduml

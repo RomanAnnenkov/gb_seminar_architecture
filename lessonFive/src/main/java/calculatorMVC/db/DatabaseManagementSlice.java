@@ -1,13 +1,24 @@
 package calculatorMVC.db;
 
+import calculatorMVC.db.fetch.IFetchFromDB;
+import calculatorMVC.db.save.ISaveToDB;
+
 public class DatabaseManagementSlice {
-    void saveData(String data) {
-        // Реализация сохранения данных в базу данных
-        System.out.println("Сохранено в базе данных: " + data);
+    private final IFetchFromDB fetchFromDB;
+    private final ISaveToDB saveToDB;
+
+    public DatabaseManagementSlice(IFetchFromDB fetchFromDB, ISaveToDB saveToDB) {
+        this.fetchFromDB = fetchFromDB;
+        this.saveToDB = saveToDB;
     }
 
-    String fetchData() {
+    public void saveData(String data) {
+        // Реализация сохранения данных в базу данных
+        saveToDB.saveToDB(data);
+    }
+
+    public String fetchData() {
         // Реализация извлечения данных из базы данных
-        return "Данные из базы данных";
+        return fetchFromDB.fetchFromDB();
     }
 }

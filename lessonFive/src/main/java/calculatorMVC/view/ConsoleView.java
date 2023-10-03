@@ -1,20 +1,24 @@
 package calculatorMVC.view;
 
 import calculatorMVC.model.CalculationLayer;
+import calculatorMVC.view.input.IInput;
+import calculatorMVC.view.output.IOutput;
 
 
 public class ConsoleView implements IView {
-    InputOutputLayer ioLayer;
+    IInput input;
+
+    IOutput output;
     CalculationLayer calcLayer;
 
-    public ConsoleView() {
-        ioLayer = new InputOutputLayer();
+    public ConsoleView(IInput input, IOutput output) {
+        this.input = input;
+        this.output = output;
         calcLayer = new CalculationLayer();
     }
 
     @Override
     public void runCalculator() {
-
-        calcLayer.subtract(Double.parseDouble(ioLayer.getInput()), Double.parseDouble(ioLayer.getInput()));
+        calcLayer.subtract(Double.parseDouble(input.getInput()), Double.parseDouble(input.getInput()));
     }
 }

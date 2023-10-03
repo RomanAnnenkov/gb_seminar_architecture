@@ -107,4 +107,22 @@ calculatorMVC.view.input.IInput <|.. calculatorMVC.view.input.SystemInInput
 calculatorMVC.view.output.IOutput <|.. calculatorMVC.view.output.ConsoleOutput
 calculatorMVC.model.substractOperation.ISubstract <|.. calculatorMVC.model.substractOperation.SubstractOperation
 calculatorMVC.db.fetch.IFetchFromDB <|.. calculatorMVC.db.fetch.FetchFromMysql
+
+CalculationLayer --> SubstractOperation : creates and uses
+CalculationLayer --> SumOperation : creates and uses
+CalculationLayer --> DivideOperation : creates and uses
+CalculationLayer --> MultiplyOperation : creates and uses
+
+ConsoleView --> SystemInInput : uses
+ConsoleView --> ConsoleOutput : uses
+
+DatabaseManagementSlice --> IFetchFromDB : uses
+DatabaseManagementSlice --> ISaveToDB : uses
+
+Main --> ConsoleView : creates
+Main --> DatabaseManagementSlice: creates
+Main --> SaveToPostgresql : creates
+Main --> FetchFromPostgresql : creates
+Main --> CalculationLayer: creates
+
 @enduml

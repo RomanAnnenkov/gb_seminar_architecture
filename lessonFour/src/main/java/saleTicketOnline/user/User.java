@@ -6,6 +6,8 @@ package saleTicketOnline.user;
 public class User implements UserActions {
     private String email;
     private int balanse;
+    private boolean isAuthorized;
+    private String name;
 
     public User(String email, String name) {
         this.email = email;
@@ -51,9 +53,6 @@ public class User implements UserActions {
     public void setName(String name) {
         this.name = name;
     }
-
-    private boolean isAuthorized;
-    private String name;
 
     /**
      * Метод для получения информации о авторизации пользователя

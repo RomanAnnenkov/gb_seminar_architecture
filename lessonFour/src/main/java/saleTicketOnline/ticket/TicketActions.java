@@ -1,5 +1,8 @@
 package saleTicketOnline.ticket;
 
+/**
+ * интерфейс действий с пользователем
+ */
 public interface TicketActions {
     /**
      * Задаёт имя пассажира

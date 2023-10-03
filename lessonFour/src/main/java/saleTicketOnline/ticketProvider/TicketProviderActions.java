@@ -5,6 +5,9 @@ import saleTicketOnline.ticket.Ticket;
 import java.time.LocalDateTime;
 import java.util.List;
 
+/**
+ * интерфейс действий провайдера билетов
+ */
 public interface TicketProviderActions {
     /**
      * Получение списка доступных для бронирования билетов

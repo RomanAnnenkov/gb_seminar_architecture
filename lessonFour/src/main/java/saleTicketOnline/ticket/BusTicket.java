@@ -5,8 +5,9 @@ import java.time.LocalDateTime;
 public class BusTicket extends Ticket {
 
     private final int routeId;
+    private int price;
 
-    public BusTicket(int ticketNumber, LocalDateTime departureTime, int routeId) {
+    public BusTicket(int ticketNumber, LocalDateTime departureTime, int routeId, int price) {
         super(ticketNumber, departureTime);
         this.routeId = routeId;
     }

@@ -33,19 +33,23 @@ BusTicket --[invariant]-> BusTicket : Price > 0 - это инвариант дл
 
 
 ### Определить абстрактные и конкретные классы.
-Выделяем абстрактный класс Ticket, класс BusTicket, класс User.
+Создаём абстрактный класс Ticket, класс BusTicket, BusTicketProvider, User, ConsoleView, OnlineShop
 
 ### Определить интерфейсы.
-Выделяем два интерфейса действий UserActions и TicketActions.
+Создаём интерфейсы UserActions, TicketActions, TicketProviderActions, OnlineShopActions, IView 
 
 ### Реализовать наследование.
 Наследуем BusTicket от Ticket.
+Наследуем OnlineShop от OnlineShopActions.
+Наследуем BusTicketProvider от TicketProviderActions.
+Наследуем ConsoleView от IView.
+Наследуем OnlineShopActions от TicketProviderActions.
 
 ### Выявить компоненты.
-Добавляем package user и ticket. Группируем классы и интерфейсы в логические компоненты.
+Добавляем package user, ticket, ticketProvider, onlineShop, view. Группируем классы и интерфейсы в логические компоненты.
 
 ### Разработать Диаграмму компонент использую нотацию UML 2.0. Общая без деталей.
-Диаграмма представлена в файле **onlineTicket.puml**
+Диаграмма представлена в файле **saleOnlineTicket.puml**
 
 ### Определить алгоритм взаимодействия Группы 1 и Группы 2 – разработать контракт.
 Контракты описаны в документации к методам и классам.
@@ -53,26 +57,33 @@ BusTicket --[invariant]-> BusTicket : Price > 0 - это инвариант дл
 ### Посчитать Метрики абстрактности компонент.
 
 Система включает в себя следующие элементы:
-
-UserActions (интерфейс)
-TicketActions (интерфейс)
-User (класс)
+OnlineShop (класс)
+OnlineShopActions (интерфейс)
 Ticket (абстрактный класс)
+TicketActions (интерфейс)
 BusTicket (класс)
+TicketProviderActions (интерфейс)
+BusTicketProvider (класс)
+User (класс)
+UserActions (интерфейс)
+ConsoleView (класс)
+IView (интерфейс)
 Main (класс)
 
-Всего 6 компонентов.
+Всего 12 компонентов.
 
 Из них абстрактные:
-
-UserActions (интерфейс)
-TicketActions (интерфейс)
+OnlineShopActions (интерфейс)
 Ticket (абстрактный класс)
+TicketActions (интерфейс)
+TicketProviderActions (интерфейс)
+UserActions (интерфейс)
+IView (интерфейс)
 
-Всего 3 абстрактных компонента.
+Всего 6 абстрактных компонента.
 
 Вычисление метрики:
 
-Метрика абстрактности = (3 / 6) * 100% = 50%
+Метрика абстрактности = (6 / 12) * 100% = 50%
 
 Это означает, что 50% компонентов в вашей системе являются абстрактными.

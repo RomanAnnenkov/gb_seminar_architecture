@@ -17,7 +17,7 @@ public class Main {
     private static AtomicInteger idGenerator = new AtomicInteger(1); // Генератор ID для пользователей.
     public static void main(String[] args) throws IOException {
         HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
-        server.createContext("/users", new restApiMoreDifficult.Main.UsersHandler());
+        server.createContext("/users", new UsersHandler());
         server.start();
         System.out.println("Server started on port 8080");
 

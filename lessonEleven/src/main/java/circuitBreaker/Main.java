@@ -1,3 +1,5 @@
+package circuitBreaker;
+
 // Класс, представляющий паттерн Circuit Breaker
 class CircuitBreaker {
     private boolean isOpen = false;         // Флаг, указывающий, открыт ли Circuit Breaker
@@ -68,7 +70,6 @@ class UserService {
     }
 }
 
-// Класс для запуска примера
 // Класс для запуска примера
 public class Main {
     public static void main(String[] args) {
